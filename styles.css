@@ -1,0 +1,126 @@
+                @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&display=swap');
+
+                body {
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 100vh;
+                        background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+                        font-family: 'Source Code Pro', monospace;
+                        overflow: hidden;
+                }
+
+                .cyber-container {
+                        position: relative;
+                        padding: 3rem 4rem;
+                        border-radius: 20px;
+                        background: rgba(0, 0, 0, 0.8);
+                        box-shadow: 0 0 50px rgba(111, 0, 255, 0.3);
+                        border: 2px solid #6f00ff;
+                        backdrop-filter: blur(10px);
+                        transform-style: preserve-3d;
+                }
+
+                .cyber-glow {
+                        position: absolute;
+                        width: 120%;
+                        height: 120%;
+                        background: radial-gradient(circle, #6f00ff 0%, transparent 70%);
+                        opacity: 0.3;
+                        z-index: -1;
+                        animation: pulse 4s infinite;
+                }
+
+                .clock {
+                        color: #6f00ff;
+                        font-size: 5rem;
+                        display: flex;
+                        align-items: center;
+                        text-shadow: 0 0 15px rgba(111, 0, 255, 0.7);
+                        position: relative;
+                }
+
+                .time-segment {
+                        background: rgba(255, 255, 255, 0.05);
+                        padding: 0.8rem 1.2rem;
+                        border-radius: 12px;
+                        margin: 0 0.5rem;
+                        position: relative;
+                        transition: all 0.3s ease;
+                        border: 1px solid rgba(111, 0, 255, 0.3);
+                }
+
+                .separator {
+                        color: #ff006a;
+                        text-shadow: 0 0 10px #ff006a;
+                        animation: blink 1s infinite;
+                }
+
+                .date-display {
+                        text-align: center;
+                        color: #00ff88;
+                        font-size: 1.2rem;
+                        margin-top: 1.5rem;
+                        text-shadow: 0 0 10px #00ff88;
+                }
+
+                .particles {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        pointer-events: none;
+                }
+
+                @keyframes pulse {
+                        0%, 100% { transform: scale(1); opacity: 0.3; }
+                        50% { transform: scale(1.1); opacity: 0.5; }
+                }
+
+                @keyframes blink {
+                        0%, 100% { opacity: 1; }
+                        50% { opacity: 0.3; }
+                }
+
+                @keyframes float {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-10px); }
+                }
+
+                .time-segment:hover {
+                        transform: scale(1.1);
+                        background: rgba(111, 0, 255, 0.2);
+                        box-shadow: 0 0 20px rgba(111, 0, 255, 0.5);
+                }
+
+                @media (max-width: 768px) {
+                        .clock {
+                                font-size: 3rem;
+                        }
+
+                        .cyber-container {
+                                padding: 2rem 2.5rem;
+                        }
+
+                        .date-display {
+                                font-size: 1rem;
+                        }
+                }
+
+                .cyber-line {
+                        position: absolute;
+                        background: #6f00ff;
+                        box-shadow: 0 0 10px #6f00ff;
+                }
+
+                .horizontal-line {
+                        width: 100%;
+                        height: 2px;
+                        animation: scan 4s linear infinite;
+                }
+
+                @keyframes scan {
+                        0% { transform: translateY(-100%); }
+                        100% { transform: translateY(200%); }
+                }
