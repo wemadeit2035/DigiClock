@@ -22,32 +22,3 @@
                 // Initial update and set interval
                 updateClock();
                 setInterval(updateClock, 1000);
-
-                // Add particle effect
-                document.addEventListener('DOMContentLoaded', () => {
-                        const container = document.querySelector('.cyber-container');
-                        for(let i = 0; i < 50; i++) {
-                                const particle = document.createElement('div');
-                                particle.className = 'cyber-line';
-                                particle.style.cssText = `
-                                        width: ${Math.random() * 3}px;
-                                        height: ${Math.random() * 20}px;
-                                        left: ${Math.random() * 100}%;
-                                        top: ${Math.random() * 100}%;
-                                        animation: float ${5 + Math.random() * 10}s infinite;
-                                        opacity: ${0.2 + Math.random() * 0.5};
-                                `;
-                                container.appendChild(particle);
-                        }
-                });
-
-                // Add hover effect
-                document.querySelectorAll('.time-segment').forEach(segment => {
-                        segment.addEventListener('mouseover', () => {
-                                segment.style.transform = 'scale(1.1) rotateZ(5deg)';
-                        });
-
-                        segment.addEventListener('mouseout', () => {
-                                segment.style.transform = 'scale(1) rotateZ(0)';
-                        });
-                });
